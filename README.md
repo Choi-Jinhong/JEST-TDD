@@ -42,3 +42,43 @@ npm install jest --save-dev
 
 ### Jest가 Test파일을 찾는 방법
 - **{파일명}.test.js**, **{파일명}.spec.js**, **"tests"폴더 내의 있는 파일**을 대상으로 테스트를 진행
+
+<br/>
+
+## jest.fn()
+
+### jest.fn()이란?
+- Mock 함수를 생성하는 함수
+- 단위 테스트를 작성할 때 해당 코드가 의존하는 부분을 가짜로 대체하는 일을 함
+*Mock: 모의, 가짜, 흉내내는*
+
+### 단위 테스트가 독립적이어야 하는 이유
+- 의존적인 부분을 구현하기 까다로움
+- 의존적인 부분의 상태에 따라 테스트하고자 하는 부분의 결과의 영향을 미침
+
+### jest.fn()의 역할
+- 생성한 가짜 함수에 어떤 일들이 발생하는지 알 수 있음
+- 다른 코드들에 의해서 어떻게 호출되는 지를 기억해 내부적으로 어떻게 사용되는지 알 수 있음
+
+### jset.fn() 생성 방법
+1. Mock(가짜) 함수 생성
+```
+const mockFunction = jest.fn();
+```
+2. 해당 함수를 통해 인자를 넘겨도 호출가능
+```
+mockFunction();
+mockFunction(hello);
+```
+3. 반환값을 알려줄 수도 있음
+```
+mockFunction.mockReturnValue("가짜 함수 반환");
+```
+4. 가짜 함수가 몇 번 호출되었고 어떤 인자가 넘어왔는지 검증 가능
+```
+mockFunciton('hello)
+mockFunction()
+
+expect(mockFunction).toBeCalledWith('hello')
+expect(mockFunction).toBeCalledTimes(2)
+```
