@@ -152,3 +152,14 @@ Mongoose: looks like you're trying to test a Mongoose app with Jest's default js
 ```
   expect(res._getJSONData()).toStrictEqual(newProduct);
 ```
+
+---
+
+## Create 에러 처리
+
+### 포스트맨이란?
+- 개발한 API를 테스트하는 플랫폼
+- 클라이언트가 없기 때문에 사용
+
+### 동기 처리 시 주의할 점
+- Controller에서 동기처리를 하였다면, 테스트 코드에도 적용해주어야 함
