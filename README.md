@@ -121,3 +121,9 @@ Mongoose: looks like you're trying to test a Mongoose app with Jest's default js
 #### 해결 방법 
 1. jest.config.js 생성 
 2. ` module.exports= { testEnvironment: "node" } `를 입력
+
+
+### request와 response는 어떻게 얻는가?
+- 'node-mocks-http' 모듈을 사용하여 req, res를 생성할 수 있음
+
+###  
