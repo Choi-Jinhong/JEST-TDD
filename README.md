@@ -146,3 +146,9 @@ Mongoose: looks like you're trying to test a Mongoose app with Jest's default js
 ```
     expect(res._isEndCalled()).toBeTruthy();
 ```
+
+### 새로 생성된 결과값 전달
+
+```
+  expect(res._getJSONData()).toStrictEqual(newProduct);
+```
