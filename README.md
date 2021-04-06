@@ -165,3 +165,17 @@ Mongoose: looks like you're trying to test a Mongoose app with Jest's default js
 - Controller에서 동기처리를 하였다면, 테스트 코드에도 적용해주어야 함
 
 ### 에러 처리를 위한 단위 테스트 작성
+
+---
+
+## 통합테스트
+모듈을 통합하는 단계에서 수행하는 테스트
+
+### 통합테스트를 하는 이유는?
+- 모듈들 간의 상호 작용이 잘 이뤄지는지 검증하기 위해
+- 통합하는 과정에서 발생할 수 있는 오류를 찾기 위해
+
+### Supertest란 ?
+- nodejs http 서버를 테스트하기 위해 만들어진 모듈
+- 통합 테스트를 진행할 때에는 jest가 아닌 Supertest를 이용
+
