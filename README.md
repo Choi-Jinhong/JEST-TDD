@@ -163,3 +163,5 @@ Mongoose: looks like you're trying to test a Mongoose app with Jest's default js
 
 ### 동기 처리 시 주의할 점
 - Controller에서 동기처리를 하였다면, 테스트 코드에도 적용해주어야 함
+
+### 에러 처리를 위한 단위 테스트 작성
