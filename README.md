@@ -126,4 +126,9 @@ Mongoose: looks like you're trying to test a Mongoose app with Jest's default js
 ### request와 response는 어떻게 얻는가?
 - 'node-mocks-http' 모듈을 사용하여 req, res를 생성할 수 있음
 
-###  
+### req.body 데이터를 가져오는 방법은?
+- /test/data 폴더 내에 json 파일로 body 데이터를 만들어서 사용할 수 있음
+
+## BeforeEach
+테스트 내에 공통된 코드를 한 번에 모아서 실행을 해줘 코드의 반복을 줄임
+
