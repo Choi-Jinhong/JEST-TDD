@@ -21,9 +21,16 @@ mongoose.connect(address, {
 app.use("/api/products", productRoutes);
 
 app.use(express.json());
+
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
+app.use((error, req, res, next) => {
+  res.status(500).json({ message: error.message });
+})
+
 app.listen(PORT);
 console.log(`Running on Port ${PORT}`);
+
+module.exports = app;

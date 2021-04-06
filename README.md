@@ -178,4 +178,3 @@ Mongoose: looks like you're trying to test a Mongoose app with Jest's default js
 ### Supertest란 ?
 - nodejs http 서버를 테스트하기 위해 만들어진 모듈
 - 통합 테스트를 진행할 때에는 jest가 아닌 Supertest를 이용
-
