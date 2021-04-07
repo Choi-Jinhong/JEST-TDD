@@ -42,3 +42,9 @@ describe("Product Controller Create", () => {
     expect(next).toBeCalledWith(errorMessage);
   });
 });
+
+describe("Product Controller Get", () => {
+  it("should have a get Products", () => {
+    expect(typeof productController.getProducts).toBe("function");
+  });
+});
