@@ -50,6 +50,6 @@ describe("Product Controller Get", () => {
   });
   it("should call ProductModel.find()", async () => {
     await productController.getProducts(req, res, next);
-    expect(productModel.find).toHaveBeenCalledWith({})
-  })
+    expect(productModel.find).toHaveBeenCalledWith({}); // find와 같은 함수를 사용할 때에는 미리 해당 함수를 jset.fn()으로 설정해줘야함
+  });
 });
