@@ -6,7 +6,9 @@ const allProducts = require("../data/all-products.json");
 
 productModel.create = jest.fn();
 productModel.find = jest.fn();
+productModel.findById = jest.fn();
 
+const productId = "49219fjdaldnfladi";
 let req, res, next;
 
 beforeEach(() => {
@@ -62,5 +64,23 @@ describe("Product Controller Get", () => {
     productModel.find.mockReturnValue(allProducts);
     await productController.getProducts(req, res, next);
     expect(res._getJSONData()).toStrictEqual(allProducts);
+  });
+  it("should handle errors", async () => {
+    const errorMessage = { message: "Error finding product data" };
+    const rejectedPromise = Promise.reject(errorMessage);
+    productModel.create.mockReturnValue(rejectedPromise);
+    await productController.createProduct(req, res, next);
+    expect(next).toBeCalledWith(errorMessage);
+  });
+});
+
+describe("Product Controller GetById", () => {
+  it("should have a getProductById", () => {
+    expect(typeof productController.getProductById).toBe("function");
+  });
+  it("should call productMode.findById", async () => {
+    req.params.productId = productId;
+    await productController.getProductById(req, res, next);
+    expect(productModel.findById).toBeCalledWith(productId);
   });
 });

@@ -8,11 +8,9 @@ const PORT = 5000;
 const app = express();
 dotenv.config();
 
-const address = process.env.ADDRESS;
+const uri = process.env.ADDRESS;
 
-console.log(address);
-
-mongoose.connect(address, {
+mongoose.connect('mongodb+srv://admin:gnong1475!@cluster-tdd.5hqkn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log('MongoDB Connect..'))
